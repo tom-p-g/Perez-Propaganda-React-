@@ -1,14 +1,15 @@
+import { Button, ButtonGroup } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
+
 const CartWidget = () => {
     const cartCounter = 5
   return (
-    <div className="btnCartWidget">
+    <Button colorScheme='blue' size='lg'>
+      <Box display="flex" w="auto" p="10px">
         <i class="fa fa-shopping-cart"></i>
-        <div id="cartCounter">
-            <p>{cartCounter}</p>
-        </div>
-
-
-    </div>
+        <p>{cartCounter}</p>
+      </Box>
+    </Button>
   )
 }
 

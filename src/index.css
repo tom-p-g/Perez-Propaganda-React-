@@ -1,26 +1,3 @@
-#navBar {
-  width: 100vw;
-  height: 10vh;
-  background-color: blue;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-.btnCartWidget {
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: aquamarine;
-  color: white;
-  border-radius: 10px;
-  border: none;
-  font-size: large;
-}
-#itemListContainer {
-  width: 100vw;
-  height: auto;
-  display: flex;
-  background-color: lightgray;
+* {
+    text-align: center;
 }
