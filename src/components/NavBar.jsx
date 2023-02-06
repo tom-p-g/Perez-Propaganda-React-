@@ -1,5 +1,16 @@
 import { Box } from '@chakra-ui/react'
 import CartWidget from "./CartWidget.jsx"
+import { Button, ButtonGroup } from '@chakra-ui/react'
+import {
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuDivider,
+} from '@chakra-ui/react'
 
 
 const NavBar = () => {
@@ -10,14 +21,20 @@ const NavBar = () => {
       <div>
         <h1>PEREZ PROPAGANDA</h1>
       </div>
-      <div>
-        <ul>
+      <Menu>
+        <MenuButton as={Button} bgColor="#3A6EA5">
+          Categorías
+        </MenuButton>
+        <MenuList color="#004E98">
+          <MenuItem>Imprenta</MenuItem>
+          <MenuItem>Empresariales</MenuItem>
+          <MenuItem>Mayorista</MenuItem>
+          <MenuItem>Imprenta</MenuItem>
+          <MenuItem>Soluciones Informáticas</MenuItem>
+        </MenuList>
+      </Menu>
+      <CartWidget />
 
-        </ul>
-      </div>
-      <div>
-        <CartWidget />
-      </div>
     </Box>
   )
 }

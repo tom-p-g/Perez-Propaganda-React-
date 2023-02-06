@@ -6,7 +6,7 @@ const CartWidget = () => {
   return (
     <Button colorScheme='blue' size='lg'>
       <Box display="flex" w="auto" p="10px">
-        <i class="fa fa-shopping-cart"></i>
+        <i className="fa fa-shopping-cart"></i>
         <p>{cartCounter}</p>
       </Box>
     </Button>
