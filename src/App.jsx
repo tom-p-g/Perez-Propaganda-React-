@@ -1,15 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import ItemListContainer from "./components/ItemListContainer"
+import NavBar from "./components/NavBar"
 
 function App() {
-  const [count, setCount] = useState(0)
-  const proyecto = "Perez Propaganda"
-
   return (
     <>
-    <h1>{proyecto}</h1>
+    <div>
+      <NavBar />
+      <ItemListContainer greetings = "Bienvenido a la web de Perez Propaganda"/>
+    </div>
     </>
+    
   )
 }
 
