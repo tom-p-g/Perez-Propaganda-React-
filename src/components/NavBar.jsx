@@ -26,7 +26,7 @@ const NavBar = () => {
           Categorías
         </MenuButton>
         <MenuList color="#004E98">
-          <MenuItem>Imprenta</MenuItem>
+          <MenuItem>Almanaques</MenuItem>
           <MenuItem>Empresariales</MenuItem>
           <MenuItem>Mayorista</MenuItem>
           <MenuItem>Imprenta</MenuItem>
