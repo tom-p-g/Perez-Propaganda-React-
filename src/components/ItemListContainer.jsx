@@ -2,10 +2,10 @@ import { Box } from "@chakra-ui/react"
 import Data from "../Data.json"
 import ItemList from "./ItemList.jsx"
 import { useParams } from "react-router-dom"
-const ItemListContainer = () => {
-  const {categoria} = useParams()
- 
 
+const ItemListContainer = () => {
+  const {id} = useParams()
+  
   const getDatos = () => {
     return new Promise((resolve, reject) => {
       if (Data.length === 0) {
@@ -25,12 +25,12 @@ async function fetchingDatos() {
 }
 fetchingDatos()
 
-const categoriaFiltro = Data.filter((producto)=> producto.categoria === categoria)
-console.log(categoria)
+const categoriaFiltro = Data.filter((producto)=> producto.categoria === id)
+
 
 return (
   <Box w="100%" h="auto" bgColor="#EBEBEB" flexWrap="wrap">
-    {categoria ? <ItemList productos={categoriaFiltro}/> : <ItemList productos = {Data} />}
+    {id ? <ItemList productos={categoriaFiltro}/> : <ItemList productos = {Data} />}
   </Box>
 )
 }

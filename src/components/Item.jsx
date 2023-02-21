@@ -1,6 +1,5 @@
 import { Box, Button, Container, Image , Heading} from '@chakra-ui/react'
-import { useState } from 'react'
-import ItemCount from './ItemCount'
+import { Link } from 'react-router-dom'
 
 
 const Item = ({ key, id, nombre, precio, stock, categoria, imgUrl }) => {
@@ -10,14 +9,17 @@ const Item = ({ key, id, nombre, precio, stock, categoria, imgUrl }) => {
       <Box w="200px" h="200px">
         <Image src={imgUrl} alt="Foto Producto" />
       </Box>
-      <h2>{nombre}</h2>
+      <Heading fontSize="14pt">{nombre}</Heading>
       <h3>Stock: {stock}</h3>
       <h3>Categoría: {categoria}</h3>
       <h3>Precio Unitario: ${precio}</h3>
-      <ItemCount stock={stock} />
-      <Button bg="#004E98" color="white">
-        Detalle
-      </Button>
+      <Link to={`/item/${id}`}>
+        <Button bg="#004E98" color="white">
+          Detalle
+        </Button>
+      
+      </Link>
+      
     </Box>
   )
 }

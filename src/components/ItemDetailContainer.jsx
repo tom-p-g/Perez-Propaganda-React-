@@ -1,11 +1,11 @@
 import React from 'react'
 import Data from "../Data.json"
-import { Container } from '@chakra-ui/react'
+import { Container, Box } from '@chakra-ui/react'
 import ItemDetail from './ItemDetail'
 import { useParams} from 'react-router-dom'
 
 const ItemDetailContainer = () => {
-    const {id} = useParams()
+    
 
     const getDatos = () => {
         return new Promise((resolve, reject) => {
@@ -13,23 +13,23 @@ const ItemDetailContainer = () => {
             reject(new Error ("No hay productos disponibles"))
           }
           setTimeout(() => {
-            const prodFiltro = Data.filter((producto) => producto.id === id)
-            resolve (prodFiltro)
+            
+            resolve (Data)
           },2000)
         })
     }
     async function fetchingDatos() {
       try {
-        const datosFecthed = await getDatos()
+        const datosFechted = await getDatos()
       } catch (err) {
         console.log("error!")
       }
     }
     fetchingDatos()
   return (
-    <Container>
-        <ItemDetail producto={Data} />
-    </Container>
+    <Box w="100vw" h="auto" display="flex" justifyContent="center" alignItems="center" bgColor="#EBEBEB">
+        <ItemDetail productos={Data} />
+    </Box>
   )
 }
 
