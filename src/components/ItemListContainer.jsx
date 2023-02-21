@@ -1,26 +1,38 @@
 import { Box } from "@chakra-ui/react"
-const ItemListContainer = ({ greetings }) => {
-  return (
-    <Box w="100%" h="auto" bgColor="#EBEBEB">
-      <Box w="100%" h="40px" bgColor="#FF6700" display="flex" alignItems="center" justifyContent="center">
-        {greetings}
-      </Box>
+import Data from "../Data.json"
+import ItemList from "./ItemList.jsx"
+import { useParams } from "react-router-dom"
+const ItemListContainer = () => {
+  const {categoria} = useParams()
+ 
 
-      <p>ItemListContainer</p>
-      <Box w="100%" h="auto" display="flex" justifyContent="space-around">
-        
-        <Box bgColor="#C0C0C0" w="300px" h="400px" border="2px solid gray" borderRadius="5px">
-          item
-        </Box>
-        <Box bgColor="#C0C0C0" w="300px" h="400px" border="2px solid gray" borderRadius="5px">
-          item
-        </Box>
-        <Box bgColor="#C0C0C0" w="300px" h="400px" border="2px solid gray" borderRadius="5px">
-          item
-        </Box>
-      </Box>
-    </Box>
-  )
+  const getDatos = () => {
+    return new Promise((resolve, reject) => {
+      if (Data.length === 0) {
+        reject(new Error ("No hay productos disponibles"))
+      }
+      setTimeout(() => {
+        resolve (Data)
+      },2000)
+    })
+}
+async function fetchingDatos() {
+  try {
+    const datosFecthed = await getDatos()
+  } catch (err) {
+    console.log("error!")
+  }
+}
+fetchingDatos()
+
+const categoriaFiltro = Data.filter((producto)=> producto.categoria === categoria)
+console.log(categoria)
+
+return (
+  <Box w="100%" h="auto" bgColor="#EBEBEB" flexWrap="wrap">
+    {categoria ? <ItemList productos={categoriaFiltro}/> : <ItemList productos = {Data} />}
+  </Box>
+)
 }
 
 export default ItemListContainer

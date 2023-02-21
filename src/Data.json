@@ -1,0 +1,9 @@
+[
+ {"id": 1 , "nombre" : "Almanaque de Bolsillo", "precio" : 75, "categoria": "Almanaque", "stock": 1200, "imgUrl" : "https://resoluciongrafica.cl/wp-content/uploads/2017/05/calendario_bolsillo.jpg"},
+ {"id": 2 , "nombre" : "Aplique de Heladera", "precio" : 85, "categoria": "Almanaque", "stock": 2000, "imgUrl" : "https://imprentadubie.com.ar/web/wp-content/uploads/2020/11/apliques-2021-1024x1024.jpg"},
+ {"id": 3 , "nombre" : "Señaladores", "precio" : 90, "categoria": "Almanaque", "stock": 8000,  "imgUrl" : "https://th.bing.com/th/id/R.ae77d01965a13b0f36189b4020e03429?rik=qq0uhnqYpi63nw&riu=http%3a%2f%2ftgposse.com.ar%2fwp-content%2fuploads%2f31-10.jpg&ehk=MLlVMABt3vzyhSMv8bOx4ZYWorfDRMPRuKITacakPaU%3d&risl=&pid=ImgRaw&r=0"},
+ {"id": 4 , "nombre" : "Bolígrafos", "precio" : 200, "categoria": "Empresarial", "stock": 1000,   "imgUrl" : "https://th.bing.com/th/id/OIP.G6fAuhGUXPPYAqDyUZ7jPgHaIo?pid=ImgDet&rs=1"},
+ {"id": 5 , "nombre" : "Mensual Miñon", "precio" : 7.5, "categoria": "Mayorista", "stock": 10000 ,  "imgUrl" : "https://th.bing.com/th/id/OIP.ZkVrKqWjBNQFfNjpyaixlgHaHa?pid=ImgDet&rs=1"},
+ {"id": 6 , "nombre" : "Tarjeta de presentación", "precio" : 4, "categoria": "Imprenta", "stock": 0 ,  "imgUrl" : "https://th.bing.com/th/id/OIP.0bsDAwReaYs0kpqnYIpblwHaHa?pid=ImgDet&rs=1"}
+
+]
