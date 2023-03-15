@@ -2,10 +2,10 @@ import { Box, Button, Container, Image , Heading} from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 
 
-const Item = ({ key, id, nombre, precio, stock, categoria, imgUrl }) => {
+const Item = ({ id, nombre, precio, stock, categoria, imgUrl }) => {
 
   return (
-    <Box id={key} w="300px" h="500px" m="10px" bgColor="white" display="flex" flexDirection="column" alignItems="center" justifyContent="space-around" borderRadius="10px" >
+    <Box  w="300px" h="500px" m="10px" bgColor="white" display="flex" flexDirection="column" alignItems="center" justifyContent="space-around" borderRadius="10px" >
       <Box w="200px" h="200px">
         <Image src={imgUrl} alt="Foto Producto" />
       </Box>

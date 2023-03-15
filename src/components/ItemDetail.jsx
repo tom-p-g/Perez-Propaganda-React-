@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Button, Image, Heading } from '@chakra-ui/react'
+import { Box, Image, Heading } from '@chakra-ui/react'
 import { useParams } from 'react-router-dom'
 import ItemCount from './ItemCount'
 
@@ -9,7 +9,7 @@ const ItemDetail = ({ productos }) => {
   return (
     <>
       {prodFiltro.map((producto) =>
-      <Box w="300px" h="500px" m="20px" bgColor="white" display="flex" flexDirection="column" alignItems="center" justifyContent="space-around" borderRadius="10px" >
+      <Box key={producto.id} w="300px" h="500px" m="20px" bgColor="white" display="flex" flexDirection="column" alignItems="center" justifyContent="space-around" borderRadius="10px" >
         <Box w="200px" h="200px">
           <Image src={producto.imgUrl} alt="Foto Producto" />
         </Box>
@@ -17,10 +17,8 @@ const ItemDetail = ({ productos }) => {
         <h3>Stock: {producto.stock}</h3>
         <h3>Categoría: {producto.categoria}</h3>
         <h3>Precio Unitario: ${producto.precio}</h3>
-        <ItemCount stock={producto.stock} />
-        <Button bgColor="#3A6EA5" color="white">
-          Añadir a Carrito
-        </Button>
+        <ItemCount stock={producto.stock} id={producto.id} nombre={producto.nombre} precio={producto.precio} />
+
 
       </Box>
 

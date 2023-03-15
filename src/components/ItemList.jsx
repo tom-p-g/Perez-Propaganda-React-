@@ -7,13 +7,13 @@ const ItemList = ({productos}) => {
    <Box w="100%" display="flex" h="auto" justifyContent="space-around" flexWrap="wrap" p="30px">
     {productos.map((producto) => {
       return(<Item 
+        key={producto.id}
         id={producto.id} 
         nombre={producto.nombre}
         precio={producto.precio}
         stock={producto.stock}
         categoria={producto.categoria}
         imgUrl={producto.imgUrl}
-        key={producto.id}
       />
      )
     })

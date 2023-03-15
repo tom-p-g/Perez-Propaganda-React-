@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import PresentacionApi from './PresentacionApi'
 
+
 const ConsumiendoApi = () => {
   const getObjetos = async () => {
     const response = await fetch("https://jsonplaceholder.typicode.com/posts")

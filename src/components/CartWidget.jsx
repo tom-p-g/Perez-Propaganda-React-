@@ -1,15 +1,19 @@
 import { Button, ButtonGroup } from '@chakra-ui/react'
 import { Box } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
+import { useContext } from 'react'
+import { CartContext } from '../context/ShoppingCartContext'
 
 const CartWidget = () => {
-    const cartCounter = 5
+  const [cart, setCart] = useContext(CartContext);
+  const cantidadProductos = cart.length
+
   return (
       <Link to="/cart">
         <Button colorScheme='blue' size='lg' bgColor="#FF6700">
           <Box display="flex" w="auto" p="10px">
             <i className="fa fa-shopping-cart"></i>
-            <p>{cartCounter}</p>
+            <p>{cantidadProductos}</p>
           </Box>
         </Button>
       
