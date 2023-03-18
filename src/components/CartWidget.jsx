@@ -12,7 +12,10 @@ const CartWidget = () => {
       <Link to="/cart">
         <Button colorScheme='blue' size='lg' bgColor="#FF6700">
           <Box display="flex" w="auto" p="10px">
-            <i className="fa fa-shopping-cart"></i>
+            <Box mr="5px">
+            <i className="fa fa-shopping-cart"> </i>
+
+            </Box>
             <p>{cantidadProductos}</p>
           </Box>
         </Button>

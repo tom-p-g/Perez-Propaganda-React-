@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { Button, Box, Container } from '@chakra-ui/react'
 import { useContext } from 'react'
+import swal from 'sweetalert'
 import { CartContext } from '../context/ShoppingCartContext'
 
 const ItemCount = ({ stock, id, nombre, precio }) => {
@@ -15,13 +16,13 @@ const ItemCount = ({ stock, id, nombre, precio }) => {
       if (isItemFound ) {
         return currItems.map((item) => {
           if (item.id === id) {
-            return { ...item, cantidad: item.cantidad + counter }
+            return { ...item, cantidad: item.cantidad + counter, precioParcial: counter * precio }
           } else {
             return item;
           }
         });
       } else {
-        return [...currItems, { id, cantidad: counter, precio, nombre }]
+        return [...currItems, { id, cantidad: counter, precio, nombre, precioParcial: counter * precio }]
       }
     })
 
@@ -60,8 +61,13 @@ const ItemCount = ({ stock, id, nombre, precio }) => {
       onClick={() => {
         if(counter != 0) {
           añadirCarrito()
+          swal({title:"Producto agregado al carrito",
+                icon:"success"
+              })
         } else {
-          alert("Elija una cantidad")
+          swal({title:"Elija una cantidad",
+                icon:"error"
+              })
         }
       }
         

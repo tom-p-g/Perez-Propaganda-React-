@@ -9,7 +9,7 @@ const ItemDetail = ({ productos }) => {
   return (
     <>
       {prodFiltro.map((producto) =>
-      <Box key={producto.id} w="300px" h="500px" m="20px" bgColor="white" display="flex" flexDirection="column" alignItems="center" justifyContent="space-around" borderRadius="10px" >
+      <Box key={producto.id} w="300px" h="700px" m="20px" bgColor="white" display="flex" flexDirection="column" alignItems="center" justifyContent="space-around" borderRadius="10px" p="10px">
         <Box w="200px" h="200px">
           <Image src={producto.imgUrl} alt="Foto Producto" />
         </Box>
@@ -17,6 +17,10 @@ const ItemDetail = ({ productos }) => {
         <h3>Stock: {producto.stock}</h3>
         <h3>Categoría: {producto.categoria}</h3>
         <h3>Precio Unitario: ${producto.precio}</h3>
+        <Box display="flex" flexDirection="column" alignItems="center" justifyContent="space-around" w="200px">
+          <h3 className="subtitulo">Detalle:</h3>
+          <p>{producto.detalle}</p>  
+        </Box>
         <ItemCount stock={producto.stock} id={producto.id} nombre={producto.nombre} precio={producto.precio} />
 
 
