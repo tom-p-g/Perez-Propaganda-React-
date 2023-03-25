@@ -1,9 +1,10 @@
 import React from 'react'
 import { getFirestore, collection, addDoc } from 'firebase/firestore'
 import { useState } from 'react'
-import { Box } from '@chakra-ui/react'
+import { Box , Button} from '@chakra-ui/react'
 import { CartContext } from '../context/ShoppingCartContext'
 import { useContext } from 'react'
+import { Link } from 'react-router-dom'
 
 
 const SendOrder = () => {
@@ -50,7 +51,9 @@ const SendOrder = () => {
         <p>Id de la orden: {orderId}</p>
   
       </form>
-
+      <Link>
+        <Button>Ver Compra</Button>
+      </Link>
     </Box>
   )
 }
