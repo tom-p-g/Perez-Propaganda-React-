@@ -5,6 +5,7 @@ import { Box , Button} from '@chakra-ui/react'
 import { CartContext } from '../context/ShoppingCartContext'
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import Receipt from './Receipt'
 
 
 const SendOrder = () => {
@@ -47,7 +48,7 @@ const SendOrder = () => {
         <input type="email" placeholder='email@email.com' className="formInput" onChange={(e) => setCheckEmail(e.target.value)} />
         <h3>Confirme su E-mail</h3>
         <input type="email" placeholder='email@email.com' className="formInput" onChange={(e) => setEmail(e.target.value)} />
-        <button type='submit' className="formButton">Comprar</button>
+        <button type='submit' className="formButton" onClick={setSeeOrder(true)}>Comprar</button>
         <p>Id de la orden: {orderId}</p>
   
       </form>
